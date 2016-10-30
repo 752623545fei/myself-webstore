@@ -44,7 +44,7 @@
 	<div>
 		<form action="/WebStore/webstore/search">
 			<input type="text" id="search" name="search" value="${search}" class="inputBox">
-			<input type="hidden" value="1" id="page" name="page">
+
 			<button type="submit" class="submitBtn">SEARCH</button>
 		</form>
 	</div>
@@ -55,13 +55,11 @@
 	
 	<div class="pageBox">
 		<div>
-			<form action="/WebStore/webstore/search">
+
 				<span>共${pageCount}页</span>
 				<span>当前第<input value="${currentPage}" id="currentPage" name="currentPage">页</span>
-				<input type="hidden" id="searchBottom" name="search" value="${search}">
-				<button type="submit">跳转</button>
-			</form>
-			
+
+				<button type="button" id="pageBtn">跳转</button>
 		</div>
 	</div>
 </body>
@@ -73,4 +71,5 @@
 <script src="/WebStore/resource/js/goodlist.js" type="text/javascript"></script>
 
 <script src="/WebStore/resource/js/topLead.js" type="text/javascript"></script>
+
 </html>

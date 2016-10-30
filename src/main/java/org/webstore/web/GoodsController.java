@@ -96,7 +96,7 @@ public class GoodsController {
 		response.setCharacterEncoding("utf-8");*/
 		String search = request.getParameter("search");
 		int currentPage = Integer.valueOf(request.getParameter("currentPage"));
-//		System.out.println(search);
+		System.out.println("============="+search);
 		List<Goods> goods = goodService.queryList(search,currentPage);
 		return goods;
 		

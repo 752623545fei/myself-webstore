@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.webstore.dao.AreaDao">
+  	<select id="queryAreaByParentId" resultType="org.webstore.entity.Area">
+  		select area_no,area_name from tb_area where parent_no = #{parent}
+  	</select>
+  	
+  	<select id="queryAreaByParentName" resultType="org.webstore.entity.Area">
+  		select area_no,area_name from tb_area where area_name = #{parent}
+  	</select>
+  	
+</mapper>

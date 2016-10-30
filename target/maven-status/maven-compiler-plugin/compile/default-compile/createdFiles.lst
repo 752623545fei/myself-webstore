@@ -1,0 +1,10 @@
+org\webstore\dao\UserDao.class
+org\webstore\interceptor\Interceptor.class
+org\webstore\entity\Goods.class
+org\webstore\web\GoodsController.class
+org\webstore\service\GoodService.class
+org\webstore\enums\GoodsTypeEnum.class
+org\webstore\dao\GoodsDao.class
+org\webstore\entity\GoodClass.class
+org\webstore\entity\User.class
+org\webstore\service\GoodServiceImpl.class

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.webstore.dao.UserDao">
+  	<select id="queryAll" resultType="org.webstore.entity.User">
+  		select USER_ID ,USER_NAME,USER_PASSWORD,USER_NICKNAME,USER_PHONE,USER_EMAIL
+  		from user
+  		order by USER_ID
+  	</select>
+
+	<select id="queryOne" resultType="org.webstore.entity.User">
+		select *
+		from user
+		where name = #{name}
+	</select>
+
+  	<select id="queryPassword" resultType="java.lang.String">
+  		select password
+  		from user
+  		where name = #{name}
+  	</select>
+
+	<select id="queryByName" resultType="java.lang.String">
+		select name
+		from user
+		where name = #{name}
+	</select>
+
+	<select id="queryIdByName" resultType="java.lang.String">
+		select id
+		from user
+		where name = #{name}
+	</select>
+
+	<select id="queryCommonIp" resultType="java.lang.String">
+		select common_ip
+		from login_ip
+		where user_id = #{userId} AND common_ip = #{ip}
+	</select>
+
+  	<insert id="addUser" parameterType="org.webstore.entity.User">
+
+  		insert into user(name,password,nickname,phone,email,
+  		real_name,id_card_number,birthday,head_img,trade_count)
+  		values (#{name},#{password},#{nickname},#{phone},#{email},
+  				#{realName},#{idCardNumber},#{birthday},#{headImg},#{tradeCount})
+  	</insert>
+
+	<insert id="addCommonIp">
+		INSERT  INTO login_ip(user_id,common_ip)
+		VALUE  (#{userId},#{ip})
+	</insert>
+</mapper>

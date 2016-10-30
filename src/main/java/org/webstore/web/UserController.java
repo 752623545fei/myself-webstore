@@ -62,7 +62,7 @@ public class UserController {
 		}
 		
 	}
-
+	//login
 	@RequestMapping(value="/login/cookie",method = RequestMethod.POST,
                     produces = {"application/json;charset=UTF-8"})
     @ResponseBody
